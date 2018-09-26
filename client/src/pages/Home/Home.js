@@ -7,8 +7,7 @@ class Home extends Component {
 
   }
 
-  // onClick handle scrape --make API call to scrape articles
-  
+  // On click event to scrape articles
   handleOnClick = event => {
   
     API.scrapeArticles()
@@ -26,7 +25,7 @@ class Home extends Component {
             <h1>NYT SCRAPER</h1>
             
             {/* <Link to="/api/scrape">Scrape</Link> */}
-            <button onClick={this.handleOnClick}>Scrape Articles!</button>
+            <button onClick={this.handleOnClick}>Get Articles!</button>
         </div>
     )
   }

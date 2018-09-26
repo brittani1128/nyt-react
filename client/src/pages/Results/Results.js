@@ -3,8 +3,6 @@ import API from "../../utils/API";
 import Article from "../../components/Article/Article";
 
 
-
-
 class Results extends Component {
   state = {
     articles: [],
@@ -13,12 +11,13 @@ class Results extends Component {
     summary: ""
   };
 
+  // Loads article results 
   componentDidMount() {
     this.loadResults();
   };
 
+  // API call to get articles from db
   loadResults= () => {
-
     API.getArticles()
       .then(res =>
         this.setState({ articles: res.data, title: "", url: "", summary: "" })

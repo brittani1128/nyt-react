@@ -1,8 +1,6 @@
 const router = require("express").Router();
 // const articlesController = require("../../controllers/articlesController");
 // const express = require("express");
-const request = require("request");
-const cheerio = require("cheerio");
 const mongoose = require("mongoose");
 const Article = require("../../models/Article.js");
 
@@ -27,9 +25,7 @@ router.get("/", function(req,res){
           res.status(500).send(error);
         }
         else {
-    
           console.log(data)
-          //sends data response in json to index.handlebars file
           res.json(data);
         }
       });
