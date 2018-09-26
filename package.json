@@ -20,6 +20,7 @@
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
+    "heroku-prebuild":"cd client && yarn install",
     "server":"nodemon server.js"
   },
   "devDependencies": {
