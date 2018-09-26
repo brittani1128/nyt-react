@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-// import API from "../../utils/API";
-// import { Link } from "react-router-dom";
-import Article from "../../components/Article/Article";
 import API from "../../utils/API";
+import Article from "../../components/Article/Article";
+
+
 
 
 class Results extends Component {
@@ -56,7 +56,10 @@ class Results extends Component {
   render() {
     return (
       <div>
-        
+        {/* <Navbar /> */}
+        <div className="jumbotron">
+                <h2 className="text-center">Results</h2>
+            </div>
         <div className="container">
             
             {this.state.articles.map(article => (

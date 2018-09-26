@@ -54,8 +54,8 @@ router.get("/", function(req,res){
     });
 
     // Redirect back to home page when finished
-    // res.redirect("/");
-    res.send("articles scraped!")
+    res.redirect("/results");
+    // res.send("articles scraped!")
   });
 })
 

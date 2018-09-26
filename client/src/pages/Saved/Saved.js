@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
 
 class Home extends Component {
   state = {
@@ -10,9 +9,7 @@ class Home extends Component {
   render() {
     return(
         <div>
-            <h1>NYT SCRAPER</h1>
-            <Link to="/api/scrape">Scrape</Link>
-            {/* <button onClick={() => this.deleteBook(book._id)}>Scrape Articles!</button> */}
+            <h3 className="text-center">Saved articles will appear here</h3>
         </div>
     )
   }
