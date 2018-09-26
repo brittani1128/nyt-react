@@ -1,27 +1,14 @@
-import React, {Component} from "react";
+import React from "react";
 
-class Article extends Component {
-  state = {
-    articles: []
-  };
-
-  componentDidMount(){
-    fetch("/api/articles")
-      .then(res => res.json)
-      .then(articles => this.setState({articles}, () => console.log("articles fetched", articles)));
-  }
-  
-  render() {
-    return(
+const Article = (props) => (
+    
     <div className="text-center">
-      <h1>Article Title</h1>
-      <p>summary goes here</p>
-      <a href="#">url to article</a>
+      <h1>{props.title}</h1>
+      <p>{props.summary}</p>
+      <a href="{props.url}">Read More</a>
     </div>
-    )
-  }
-}
- 
+)
+
 
 
 export default Article;

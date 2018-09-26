@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 // import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Article } from "../../components/Article/Article";
+// import { Link } from "react-router-dom";
+import Article from "../../components/Article/Article";
+import API from "../../utils/API";
 
 
 class Results extends Component {
   state = {
-    books: [],
+    articles: [],
     title: "",
     url: "",
     summary: ""
@@ -15,14 +15,16 @@ class Results extends Component {
 
   componentDidMount() {
     this.loadResults();
-  }
+  };
 
   loadResults= () => {
-    // API.getBooks()
-    //   .then(res =>
-    //     this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-    //   )
-    //   .catch(err => console.log(err));
+
+    API.getArticles()
+      .then(res =>
+        this.setState({ articles: res.data, title: "", url: "", summary: "" })
+      )
+      .catch(err => console.log(err));
+   
   };
 
 //   deleteBook = id => {
@@ -55,7 +57,19 @@ class Results extends Component {
     return (
       <div>
         
-        
+        <div className="container">
+            
+            {this.state.articles.map(article => (
+                <Article 
+                    id={article.id}
+                    key={article.id}
+                    title={article.title}
+                    url={article.url}
+                    summary={article.summary}
+                />
+            ))}
+            
+          </div>
       </div>
     );
   }
