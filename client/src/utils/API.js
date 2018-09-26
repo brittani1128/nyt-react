@@ -4,9 +4,15 @@ export default {
   // Main get route
   getArticles: function() {
         return axios.get("/api/articles");
-      }
+  },
 
+  // Scrape Articles
+  scrapeArticles: function() {
+    return axios.get("/api/scrape");
   }
+}
+
+ 
 
 
   // Saved articles
